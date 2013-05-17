@@ -1,0 +1,4 @@
+This is about the most simplest Angular app you can have
+that's still functional.  It's fully static, but it shows
+how you can show parts of the "model", (ie, $scope) in an
+web page.

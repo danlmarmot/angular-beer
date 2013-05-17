@@ -1,0 +1,9 @@
+Open a shell prompt, and change into the dXX/test directory.
+Then ./run-unit-tests.sh
+
+If you need to start up tests, do this:
+
+karma init
+
+Answer some questions, and then you'll be good to go.
+

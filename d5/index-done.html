@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app="BeerDemo2">
+
+<head>
+  <meta charset="utf-8">
+  <title>Demo 5 - Adding a query box</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+      <link rel="stylesheet" href="../css/angular-beer.css">
+  <script>
+      var beerList = {
+          "columns" : ["name", "qty"],
+          "beers" : [
+            {"name": "porter", "qty": 10},
+            {"name": "stout", "qty": 20},
+            {"name": "kolsch", "qty": 30},
+            {"name": "belgian white", "qty": 20},
+            {"name": "IPA", "qty": 30}]
+          };
+  </script>
+  <script src="../lib/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="BeerDemo2Ctrl">
+<div class="container">
+
+    <div class="page-header">
+    <div class="row">
+    <h3>Demo 5 - Adding a query box</h3>
+    </div>
+    </div>
+
+    <div class="content">
+
+    <!-- content here -->
+
+             <div>
+            What beer are you searching for: <input ng-model="query">
+          </div>
+
+          <div>
+              Beer-search is: {[{query}]}
+          </div>
+
+    <!-- end new content -->
+    <hr>
+    <h4>Demo 4 results</h4>
+        <table class="table-bordered table-striped table-condensed table small">
+        <thead>
+            <th ng-repeat="column in beerList.columns">{[{column}]}</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="beer in beerList.beers">
+            <td ng-repeat="column in beerList.columns">{[{beer[column]}]}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h4>Demo 3 results</h4>
+        <p><i>Note that these have changed as we've redefined the beerList var</i></p>
+        <table class="table-bordered table-striped table-condensed table small">
+        <tr ng-repeat="row in beerList">
+            <td ng-repeat="item in row">{[{item}]}</td>
+        </tr>
+    </table>
+    <hr>
+    <h4>Demo 2 results</h4>
+        Here's the beer!<br>
+        <div>{[{beerList}]}</div>
+
+    <hr>
+    <h4>Demo 1 results</h4>
+    <div>
+        Beer is: {[{beer}]}
+    </div>
+
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

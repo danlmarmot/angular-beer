@@ -1,0 +1,34 @@
+D1
+
+This is about the most simplest Angular app you can have
+that's still functional.  It's fully static, but it shows
+how you can show parts of the "model", (ie, $scope) in an
+web page.
+
+D2
+
+Now we'll do two things because we kinda have to if we want
+to run Angular pages inside other frameworks.  First, we
+need Angular to respond to external data.  This would most
+often be the JSON returned from a REST call, but here we'll
+use static JSON defined in the <head> of index.html.
+
+The static JSON won't be pulled in by the app, but
+will be provided when the controller is created.  This means
+that we can mock it out later when it becomes a real HTTP AJAX
+request.
+
+The second thing we do is just change the default delimiters from
+{{foo}} to {[{foo}]}, so as not to conflict with our server-side
+template processing.  Using two templating engines for rendering
+isn't ideal, but then introducing Angular gradually means not
+conflicting with what's already established.  In our case it's
+Jinja2 templating, which uses {{foo}} delimiters (just like
+Moustache and Django).
+
+Unit tests
+
+Unit tests are modified to deal with the new structure--note the injection.
+
+We also add a unit test to make sure the length of that static
+JSON is 3.

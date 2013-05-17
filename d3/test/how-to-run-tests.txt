@@ -1,0 +1,22 @@
+Open a shell prompt, and change into the dXX/test directory.
+Then ./run-unit-tests.sh
+
+If you need to start up tests, do this:
+
+karma init
+
+Answer some questions, and then you'll be good to go.
+
+--
+D2 , some notes
+
+Don't forget to include angular-mocks in your config file.  This lets karma call the modules.
+
+The order of loading is important too.  Here's what it should be:
+
+Jasmine
+jQuery (as needed)
+AngularJS
+Angular test files (angular-mocks.js or angular-scenario.js, but not both as they conflict)
+the app under test
+All other files.
